@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Web Store</title>
+</head>
+<body class="bg-dark">
+        <header class="bg-dark jumbotron text-center">
+            <h1 class= "display-1 text-light bg-dark">Bookstore dos Federais</h1>
+        </header>
+
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse d-lg-flex left-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link text-light bg-secondary" href="webstore.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light bg-secondary" href="sobre.html">Sobre</a>
+                  </li>
+                </ul>
+              </div>
+
+            <form class="form-inline" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+        <fieldset>
+            <div class="form-row align-items-center navbar-right">
+                <div class="col-auto">
+            <label for="email"></label>
+            <input type="email" class="form-control" name="login_email" id="email" placeholder= "Ex.: nome@dominio.com">
+                </div>
+            <div class="col-auto">
+                <label for="senha"></label>
+                <input type="password" class="form-control" name="login_senha" id="senha" placeholder= "Insira sua senha">
+            </div>
+                <div class="cos-auto">
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                    <label class="form-check-label text-light bg-secondary" for="autoSizingCheck"> Lembrar de mim
+                    </label>
+                </div>
+                </div>                
+        <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Entrar</button>   
+            </div>             
+        </fieldset>
+        </form>
+            </div>
+        </nav>    
+     <main>
+        <div class = "container">
+            <div class="row mx-md-n5 bg-warning jumbotron text-center">
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/duna1.jpg" class="card-img-top" alt="duna">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo" size="15" maxlength="45"  value="Duna - Livro 1" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario" size="15" maxlength="45"  value="R$ 45,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesduna.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/1984_1.jpg" class="card-img-top" alt="1984">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo1" size="15" maxlength="45"  value="1984" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario1" size="15" maxlength="45"  value="R$ 29,99" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt1" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhes1984.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <img src="ImagensLivros/admiravelmundonovo1.jpg" class="card-img-top" alt="admiravelmundonovo">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo2" size="15" maxlength="45"  value="Admirável Mundo Novo" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario2" size="15" maxlength="45"  value="R$ 19,99" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt2" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesadmiravelmn.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/amqrl1.jpg" class="card-img-top" alt="amqrl">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo3" size="15" maxlength="45"  value="A menina que roubava livros" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario3" size="15" maxlength="45"  value="R$ 24,99" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt3" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesameninaqrl.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/aop1.jpg" class="card-img-top" alt="aop">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo4" size="15" maxlength="45"  value="As Outras Pessoas" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario4" size="15" maxlength="45"  value="R$ 36,99" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt4" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesasoutraspessoas.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/boxhp1.jpg" class="card-img-top" alt="boxhp">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo5" size="15" maxlength="45"  value="Box Harry Potter (Saga Completa)" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario5" size="15" maxlength="45"  value="R$ 156,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt5" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesharrypotter.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/extraordinario1.jpg" class="card-img-top" alt="extraordinario">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo6" size="15" maxlength="45"  value="Extraordinário" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario6" size="15" maxlength="45"  value="R$ 32,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt6" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesextraordinario.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/fahrenheit1.jpg" class="card-img-top" alt="fahrenheit">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo7" size="15" maxlength="45"  value="Fahrenheit 451" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario7" size="15" maxlength="45"  value="R$ 19,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt7" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesfahrenheit451.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/trasaulti1.jpg" class="card-img-top" alt="trasaulti">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo8" size="15" maxlength="45"  value="O Circo Mecânico Tresaulti" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario8" size="15" maxlength="45"  value="R$ 49,99" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt8" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhescircomecanico.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/ocolecionador1.jpg" class="card-img-top" alt="ocolecionador">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo9" size="15" maxlength="45"  value="O Colecionador" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario9" size="15" maxlength="45"  value="R$ 42,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt9" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesocolecionador.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/ocontodaaia1.jpg" class="card-img-top" alt="ocontodaaia">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo10" size="15" maxlength="45"  value="O Conto da Aia" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario10" size="15" maxlength="45"  value="R$ 21,99" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt10" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhescontodaaia.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/oiluminado1.jpg" class="card-img-top" alt="oiluminado">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo11" size="15" maxlength="45"  value="O Iluminado" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario11" size="15" maxlength="45"  value="R$ 46,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt11" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesoiluminado.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/osoleparatodos1.jpg" class="card-img-top" alt="osoleparatodos">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo12" size="15" maxlength="45"  value="O sol é para todos" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario12" size="15" maxlength="45"  value="R$ 32,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt12" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesosolept.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/porlugaresincriveis1.jpg" class="card-img-top" alt="porlugaresincriveis">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo13" size="15" maxlength="45"  value="Por Lugares Incríveis" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario13" size="15" maxlength="45"  value="R$ 24,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt13" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesporlugaresincriveis.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/it1.jpg" class="card-img-top" alt="it">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo14" size="15" maxlength="45"  value="It A Coisa" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario14" size="15" maxlength="45"  value="R$ 52,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt14" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhesitacoisa.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="ImagensLivros/lotr1.jpg" class="card-img-top" alt="lotr">
+                        <div class="card-body">
+                            <form class ="card" action="https://diacsc.ifrn.edu.br/mimmarcelo/methods/post.php" method="POST">
+                                <input class="card text-center" style="width: 15rem;" type="text" name="titulo" id="titulo15" size="15" maxlength="45"  value="Box - O Senhor dos Anéis" readonly />
+                                <input class="card text-center" style="width: 15rem;" type="text" name="valor_unitario" id="valor_unitario15" size="15" maxlength="45"  value="R$ 119,90" readonly />
+                                <label for="qt">Quantidade</label>
+                                <div class="form-inline">
+                                    <input type="button" value="-"
+                                    onclick ="addValue(this, -1,true)"> 
+                                    <input type="number" name="quantidade" id="qt15" min="0">
+                                    <input type="button" value="+"
+                                    onclick="addValue(this,1,false)">
+                                   </div> 
+                          <button type="submit" class="btn btn-primary mb-2 text-dark bg-warning ">Comprar</button>     
+                               </form>
+                            <a class="card" href="detalhessenhordosaneis.html">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+     </main>
+
+    <footer class="bg-dark jumbotron text-center">
+        <p class="text-light bg-dark"> Todos os direitos concedidos
+        <span class="copyleft">&copy;</span>
+        Flawbert Lorran /
+        contato: flawbert.costa@escolar.ifrn.edu.br </p>
+        <p class="text-light bg-dark"> Kamilly Naielly /
+            contato: naielly.n@escolar.ifrn.edu.br </p>
+            <p class="text-light bg-dark">Jumara Rodrigues /
+                contato: jumara.v@escolar.ifrn.edu.br </p>
+                <p class="text-light bg-dark"> Thaissa Vitória /
+                    contato: thaissa.v@escolar.ifrn.edu.br </p>
+    </footer>
+</body>
+</html>
